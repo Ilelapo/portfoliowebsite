@@ -1,0 +1,514 @@
+$grid-breakpoints: (
+  xs: 0,
+  smm: 440px,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  wd: 1310px
+)!default;
+
+@import "mixins";
+
+// primary the accent color
+$color__primary: #3444f1 !default; 
+
+// backgrounds
+$color__body-background: #e2e3e7 !default;
+
+
+$color__preloader-background: #ffffff !default;
+$color__preloader-backline: #f2f3f7 !default;
+$color__preloader-line: $color__primary !default;
+
+$color__input-background: #ffffff	!default;
+$color__input-background-focus: #ffffff	!default;
+
+$color__menu-background: #ffffff !default;
+$color__content-background: #ffffff !default;
+$color__light-background: #f2f3f7 !default;
+$color__dark-background: #212121 !default;
+
+// Texts
+$color__text-main: #565656;
+$color__text-ondark: #afafaf;
+$color__text-heading: #1a1a1a;
+$color__text-heading-ondark: #f4f4f4;
+$color__text-soft: #afafaf;
+$color__text-light: #ffffff;
+$color__text-input: #989898;
+$color__text-input-focus: #565656;
+$color__text-input-placeholder: #989898;
+
+// Links
+$color__link: #3444f1 !default;
+$color__link-hover: darken($color__link, 20%) !default;
+
+$color__link-menu: #1a1a1a !default;
+$color__link-menu-hover: $color__primary !default;
+$color__link-menu-active: $color__primary !default;
+
+// Borders (auto compile)
+$color__content-border: set-diff-color($color__content-background, 9%);
+$color__form-border: set-diff-color($color__content-background, 9%);
+$color__menu-border: set-diff-color($color__menu-background, 7.5%);
+
+// font sizes
+$size__font-base: 17 !default;
+$size__font-footer: 0.9rem !default;
+$size__font-h1: 2.75rem !default;
+$size__font-h2: 2rem !default;
+$size__font-h3: 1.75rem !default;
+$size__font-h4: 1.5rem !default;
+$size__font-h5: 1.25rem !default;
+$size__font-h6: 1rem !default;
+
+$line-height: 1.7 !default;
+$base-font-weight: 400 !default;
+
+// font families
+$font-family-sans-serif: 	"Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace: 	SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base: 			$font-family-sans-serif !default;
+$font-family-heading:		"Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+
+:root {
+	font-size: calculation-fontsize($size__font-base, 0.85);
+}
+@include media-breakpoint-up(sm) {
+	:root {
+		font-size: calculation-fontsize($size__font-base, 0.9);
+	}
+}
+@include media-breakpoint-up(md) {
+	:root {
+		font-size: calculation-fontsize($size__font-base, 0.95);
+	}
+}
+@include media-breakpoint-up(lg) {
+	:root {
+		font-size: $size__font-base+(px);
+	}
+}
+
+html {
+	font-size: 1em;
+}
+
+body {
+	font-family: $font-family-base;
+	font-size: 1rem;
+	font-weight: $base-font-weight;
+	color: $color__text-main;
+	background-color: $color__body-background;
+	line-height: $line-height;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-family: $font-family-heading;
+	color: $color__text-heading;
+
+	a {
+		color: $color__text-heading;
+
+		&:hover {
+			color: $color__link;
+		}
+	}
+}
+
+h1 {
+	font-size: $size__font-h1;
+	line-height: 1.4;
+}
+h2 {
+	font-size: $size__font-h2;
+	line-height: 1.4;
+}
+h3 {
+	font-size: $size__font-h3;
+	line-height: 1.4;
+}
+h4 {
+	font-size: $size__font-h4;
+	line-height: 1.4;
+}
+h5 {
+	font-size: $size__font-h5;
+	line-height: 1.4;
+}
+h6 {
+	font-size: $size__font-h6;
+}
+
+a {
+	color: $color__link;
+	-webkit-transition: all 0.25s ease 0s;
+	transition: all 0.25s ease 0s;
+	&:hover {
+		color: $color__link-hover;
+		//override the bootstrap link hover
+		text-decoration: none;
+	}
+}
+
+pre,
+code,
+kbd,
+samp {
+	font-family: $font-family-monospace;
+}
+
+blockquote {
+	color: $color__text-heading;
+
+	&:before {
+		background-color: $color__primary;
+		color: set-diff-color($color__primary, 60%);
+	}
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	opacity: 1;
+	color: $color__text-input-placeholder;
+}
+::-moz-placeholder { /* Firefox 19+ */
+	opacity: 1;
+	color: $color__text-input-placeholder;
+}
+:-ms-input-placeholder { /* IE 10+ */
+	opacity: 1;
+	color: $color__text-input-placeholder;
+}
+:-moz-placeholder { /* Firefox 18- */
+	opacity: 1;
+	color: $color__text-input-placeholder;
+}
+::placeholder {
+	opacity: 1;
+	color: $color__text-input-placeholder;	
+}
+
+input[type="submit"],
+button[type="submit"] {
+	background: $color__primary;
+	color: set-diff-color($color__primary, 60%);
+	border-width: 0;
+
+	&:hover,
+	&:active {
+		background: $color__link-hover;
+	}
+}
+
+.btn:not([class*="btn-outline-"]) {
+	background: $color__primary;
+	color: set-diff-color($color__primary, 60%);
+	border-width: 0;
+
+	&:hover,
+	&:active {
+		background: $color__link-hover;
+	}
+}
+
+.btn.on-submit {
+	border:3px solid $color__primary;
+	border-bottom:3px solid rgba($color__primary,0);
+	border-left:3px solid rgba($color__primary,0);
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+@keyframes ano_fadeout {
+	0% {box-shadow: inset 0 0 0 10px $color__preloader-backline, 0 0 10px $color__primary;}
+	70% {box-shadow: inset 0 0 0 10px $color__preloader-backline, 0 0 20px 10px rgba($color__primary, .02);}
+	80% {box-shadow: inset 0 0 0 10px $color__preloader-backline, 0 0 30px 20px rgba($color__primary, .01);}
+	100% {box-shadow: inset 0 0 0 10px $color__preloader-backline, 0 0 40px 30px rgba($color__primary, 0);}
+}
+
+#anoumi-site-preloader {
+	background: $color__preloader-background;
+
+	.preloader-circle {
+		-webkit-box-shadow: inset 0 0 0 10px $color__preloader-backline;
+		box-shadow: inset 0 0 0 10px $color__preloader-backline;
+		animation: ano_fadeout 2s infinite;
+
+		&:before {
+			-webkit-box-shadow: inset 0 0 0 10px $color__preloader-line;
+			box-shadow: inset 0 0 0 10px $color__preloader-line;
+		}
+	}
+}
+
+#main-header {
+	background-color: $color__menu-background;
+	border-right: 0;
+
+	.add-header-nav {
+		background: $color__primary;
+		color: set-diff-color($color__primary, 60%);
+
+		&:hover {
+			background: $color__link-hover;
+		}
+	}
+
+	.nav-ui {
+		background-color: $color__menu-background;
+
+		ul#anoumi-nav {
+			font-family: $font-family-heading;
+			li {
+				a {
+					color: $color__link-menu;
+
+					&:before {
+						background-color: $color__primary;
+					}
+
+					&:hover {
+						color: $color__link-menu-hover;
+					}
+				}
+
+				&.current-menu-item>a {
+					color: $color__link-menu-active;
+					&:before {
+						background-color: $color__link-menu-active;
+					}
+				}
+			}
+		}
+
+		ul.social-links {
+			li {
+				a {
+					color: $color__link-menu;
+
+					&:hover {
+						color: rgba( $color__link-menu, .5);
+					}
+				}
+			}
+		}
+	}
+}
+
+@include media-breakpoint-up(md) {
+	#main-header {
+		box-shadow:
+		  inset -1px 0 0 0 rgba( $color__menu-border, .5),
+		  0 1.3px 1px -15px rgba(0, 0, 0, 0.022),
+		  0 3.2px 2.6px -15px rgba(0, 0, 0, 0.031),
+		  0 6.6px 5.3px -15px rgba(0, 0, 0, 0.039),
+		  0 13.5px 11px -15px rgba(0, 0, 0, 0.048),
+		  0 37px 30px -15px rgba(0, 0, 0, 0.07);
+	}
+}
+
+.anoumi-section {
+	background-color: $color__content-background
+}
+
+$hamburger-layer-color         : $color__link-menu !default;
+$hamburger-active-layer-color  : $color__link-menu !default;
+
+.hamburger {
+	&.is-active {
+		.hamburger-inner,
+		.hamburger-inner::before,
+		.hamburger-inner::after {
+			background-color: $hamburger-active-layer-color;
+		}
+	}
+}
+.hamburger-inner {
+	&,
+	&::before,
+	&::after {
+		background-color: $hamburger-layer-color;
+	}
+}
+
+.has-light-bg {
+	background-color: $color__light-background;
+}
+.has-dark-bg {
+	background-color: $color__dark-background; 
+	color: $color__text-ondark;
+
+	h1,h2,h3,h4,h5,h6 {
+		color: $color__text-heading-ondark;
+	}
+}
+
+.content-block {
+	&.has-light-bg {
+		background-color: $color__light-background;
+	}
+
+	&.has-dark-bg {
+		background-color: $color__dark-background; 
+		color: $color__text-ondark;
+
+		h1,h2,h3,h4,h5,h6 {
+			color: $color__text-heading-ondark;
+		}
+	}
+}
+
+html.js {
+	.has-reveal-effect {
+		&.reveal-bottom,
+		&.reveal-top,
+		&.reveal-left,
+		&.reveal-right {
+			&:before {
+				background-color: $color__content-background;
+			}
+		}
+	}
+}
+
+.lead {
+	color: $color__text-heading;
+}
+.section-title {
+	&:after {
+		background: $color__primary;
+	}
+}
+.title-up-line {
+	border-top: 2px solid $color__text-heading;
+}
+
+.progress-wrap {
+	background-color: $color__content-background;
+
+	.progress {
+		.progress-bar {
+			background-color: $color__primary;
+		}
+	}
+}
+
+ul.experience-list {
+	li {
+		border-bottom: 1px solid $color__content-border;
+	}
+}
+
+.service-card {
+
+	.service-icon {
+		color: $color__primary;
+	}
+
+	&:hover {
+		background: $color__primary;
+		.service-icon {
+			background: set-diff-color($color__primary, 2%);
+			color: set-diff-color($color__primary, 30%);
+		}
+
+		.service-text {
+			color: set-diff-color($color__primary, 50%);
+		}
+		.service-name {
+			color: set-diff-color($color__primary, 60%);
+		}
+	}
+}
+
+.animated-number-wrap {
+	.animated-number {
+		color: $color__text-heading;
+	}
+	.zigzag-line {
+		svg {
+			fill: $color__primary;
+		}
+	}
+}
+
+.has-dark-bg {
+	.animated-number-wrap {
+		.animated-number {
+			color: $color__text-heading-ondark;
+		}	
+	}
+}
+
+.ano-gallery-carousel-btn-prev,
+.ano-gallery-carousel-btn-next,
+.testimonial-carousel-btn-next,
+.testimonial-carousel-btn-prev {
+	border: 1px solid $color__content-border;
+	color: $color__text-main;
+	fill: $color__text-main;
+	-webkit-transition: color 0.3s ease-out 0s, fill 0.3s ease-out 0s;
+	transition: color 0.3s ease-out 0s, fill 0.3s ease-out 0s;
+
+	&.swiper-button-disabled {
+		color: $color__content-border;
+		fill: $color__content-border;
+		cursor: not-allowed;
+	}	
+}
+
+.portfolio-filter-container {
+	.filter-drop-button {
+		border: 1px solid $color__content-border;
+	}
+	ul.portfolio-filter {
+		background: $color__primary;
+
+		a {
+			color: set-diff-color($color__primary, 60%);
+		}
+
+		.active-filter {
+			a {
+				background: $color__content-background;
+				color: $color__primary;
+			}
+		}
+	}
+}
+
+.portfolio-grid {
+	.portfolio-content {
+		background: $color__content-background;
+		border: 1px solid $color__content-border;
+	}
+	.portfolio-item {
+		.entry-title {
+			.entry-meta {
+				.p-categories {
+					span {
+						background: set-diff-color($color__content-background, 12%);
+					}
+				}
+			}
+		}
+	}
+}
+
+#anoumi-contact-form {
+	input[type="text"],
+	input[type="email"],
+	input[type="phone"],
+	textarea {
+		background-color: transparent;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		border: 0;
+		border-bottom: 1px solid $color__content-border;
+
+		&:focus,
+		&.has_value {
+			border-bottom: 1px solid set-diff-color($color__content-background, 20%);
+		}
+	}
+}
