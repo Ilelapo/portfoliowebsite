@@ -156,12 +156,6 @@ img {
   vertical-align: middle;
   border-style: none;
 }
-source { 
-   max-width: 100%;
-  height: auto;
-  vertical-align: middle;
-  border-style: none;
-  }
 
 svg {
   overflow: hidden;
@@ -610,7 +604,7 @@ button[type="submit"] {
   padding: 0;
   height: auto;
   width: auto;
-  max-width: 80px;
+  max-width: 180px;
   vertical-align: middle;
 }
 
@@ -1163,7 +1157,7 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
 
 #main-header .nav-ui .nav-content-wrapper .nav-brand img {
   display: inline-block;
-  max-width: 30%;
+  max-width: 100%;
   height: auto;
   vertical-align: middle;
   -webkit-backface-visibility: hidden;
@@ -1364,7 +1358,7 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
     width: auto;
     max-width: none;
     height: auto;
-    max-height: 50%;
+    max-height: 80%;
     vertical-align: middle;
     top: 50%;
     right: 50%;
@@ -1477,12 +1471,6 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
   #main-header .nav-ui .nav-content-wrapper .main-menu-container-wrap .main-menu-container ul#anoumi-nav > li a {
     font-size: 1.4rem;
   }
-  #myVideo {
-        max-width: 100%;
-    height: auto;
-    vertical-align: middle;
-    border-style: none;
-    }
 }
 
 .hamburger {
@@ -1680,15 +1668,13 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
   position: absolute;
   z-index: -1;
   right: 0;
-  top: 200px;
-bottom:20px;
-
-  width: 60%;
-  height: ;
+  top: 0;
+  bottom: 0;
+  width: 50%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
+  opacity: .75;
 }
 
 .section-header .fullscreen-header-image {
@@ -1707,10 +1693,10 @@ bottom:20px;
   content: "";
   position: absolute;
   width: 100%;
-  height: 50%;
+  height: 100%;
   top: 0;
   left: 0;
- 
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .section-header.split-header .section-header-content, .section-header.fullscreen-header .section-header-content {
@@ -1723,7 +1709,7 @@ bottom:20px;
 }
 
 .section-header.fullscreen-header .section-header-content h1, .section-header.fullscreen-header .section-header-content .lead {
-  color: #000000;
+  color: #fff;
 }
 
 .section-header .lead {
@@ -1876,7 +1862,7 @@ bottom:20px;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(22, 22, 22, 0.35);
 }
 
 #prologue-block .prologue-inner {
@@ -1884,7 +1870,7 @@ bottom:20px;
   height: 100%;
   margin: 0;
   padding: 0;
-  background: rgba(0, 0, 0, 0);
+  background: rgba(0, 0, 0, 0.3);
 }
 
 #prologue-block .prologue-inner .prologue-content {
@@ -1898,7 +1884,7 @@ bottom:20px;
 }
 
 #prologue-block .prologue-inner .prologue-content h1, #prologue-block .prologue-inner .prologue-content h2, #prologue-block .prologue-inner .prologue-content h3, #prologue-block .prologue-inner .prologue-content h4, #prologue-block .prologue-inner .prologue-content h5, #prologue-block .prologue-inner .prologue-content h6 {
-  color: #000000;
+  color: #fff;
 }
 
 #prologue-block .prologue-inner .prologue-content h1 {
@@ -2000,21 +1986,6 @@ bottom:20px;
   bottom: 0;
   z-index: -1;
 }
-
-@media (min-width: 768px) {
-  #myVideo {
-    width: 100%;
-    margin-top: -200px;
-  }
-}
-
-@media (max-width: 768px) {
-  #myVideo {
-    width: 100%;
-    margin-top: 0px;
-  }
-}
-
 
 .yt-background video {
   position: relative;

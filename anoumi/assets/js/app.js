@@ -703,15 +703,15 @@ window.anoumi = function($) {
 						});
 
 						if ( gal ) {
-							// $(grids).magnificPopup({
-							// 	delegate: 'a',
-							// 	type: 'image',
-							// 	removalDelay: 300,
-							// 	mainClass: 'mfp-fade',
-							// 	gallery:{
-							// 		enabled:true
-							// 	}
-							// });
+							$(grids).magnificPopup({
+								delegate: 'a',
+								type: 'image',
+								removalDelay: 300,
+								mainClass: 'mfp-fade',
+								gallery:{
+									enabled:true
+								}
+							});
 						}
 					}
 				});
