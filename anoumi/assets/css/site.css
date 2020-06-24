@@ -156,12 +156,13 @@ img {
   vertical-align: middle;
   border-style: none;
 }
-source { 
+/* PROVA
+   source { 
    max-width: 100%;
   height: auto;
   vertical-align: middle;
   border-style: none;
-  }
+  }*/
 
 svg {
   overflow: hidden;
@@ -1089,6 +1090,7 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
   html.ios #site {
     height: 768px;
   }
+  
 }
 
 /** !!!!!!!!!!!!!!!!!!!!!
@@ -1477,12 +1479,12 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
   #main-header .nav-ui .nav-content-wrapper .main-menu-container-wrap .main-menu-container ul#anoumi-nav > li a {
     font-size: 1.4rem;
   }
-  #myVideo {
-        max-width: 100%;
+  /* #myVideo {
+    max-width: 100%;
     height: auto;
     vertical-align: middle;
     border-style: none;
-    }
+    } */
 }
 
 .hamburger {
@@ -1680,14 +1682,13 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
   position: absolute;
   z-index: -1;
   right: 0;
-  top: 200px;
-bottom:20px;
-
-  width: 60%;
-  height: ;
+  top: 0;
+  bottom:0;
+ height: auto;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
   
 }
 
@@ -2001,7 +2002,7 @@ bottom:20px;
   z-index: -1;
 }
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
   #myVideo {
     width: 100%;
     margin-top: -200px;
@@ -2013,7 +2014,7 @@ bottom:20px;
     width: 100%;
     margin-top: 0px;
   }
-}
+} */
 
 
 .yt-background video {
