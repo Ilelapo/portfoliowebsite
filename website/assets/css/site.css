@@ -1479,12 +1479,13 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
   #main-header .nav-ui .nav-content-wrapper .main-menu-container-wrap .main-menu-container ul#anoumi-nav > li a {
     font-size: 1.4rem;
   }
-  /* #myVideo {
+  #myVideo {
     max-width: 100%;
     height: auto;
     vertical-align: middle;
     border-style: none;
-    } */
+    }
+ 
 }
 
 .hamburger {
@@ -1684,7 +1685,7 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
   right: 0;
   top: 0;
   bottom:0;
- height: auto;
+  height: auto;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1702,6 +1703,7 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  overflow: hidden;
 }
 
 .section-header .fullscreen-header-image:before {
@@ -1714,9 +1716,18 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
  
 }
 
+
 .section-header.split-header .section-header-content, .section-header.fullscreen-header .section-header-content {
-  height: 100%;
+  height: 50%;
 }
+
+@media (min-width: 500px) {
+  .section-header.split-header .section-header-content, .section-header.fullscreen-header .section-header-content {
+    height: 100%;
+  }
+
+}
+
 
 .section-header.split-header .section-header-content h1, .section-header.fullscreen-header .section-header-content h1 {
   margin: 0 0 0;
@@ -2008,13 +2019,22 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
     margin-top: -200px;
   }
 }
+*/
 
 @media (max-width: 768px) {
   #myVideo {
     width: 100%;
     margin-top: 0px;
   }
-} */
+} 
+@media (min-width: 300px) and (max-width: 1440px){
+  #myVideo {
+   /* width: 120%; */ 
+   /* margin-top: 20px;*/ 
+  } 
+} 
+
+
 
 
 .yt-background video {
