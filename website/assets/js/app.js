@@ -591,13 +591,13 @@ window.anoumi = function($) {
 		initContent: function() {
 			var self = this;
 
-			$('.split-header-image, .fullscreen-header-image').each( function() {
-				if ( $(this).find('img').length ) {
-					var img = $(this).find('img');
-					$(img).hide();
-					$(this).css({ backgroundImage : 'url('+ $(img).attr('src') +')'});
-				}
-			});
+			// $('.split-header-image, .fullscreen-header-image').each( function() {
+			// 	if ( $(this).find('img').length ) {
+			// 		var img = $(this).find('img');
+			// 		$(img).hide();
+			// 		$(this).css({ backgroundImage : 'url('+ $(img).attr('src') +')'});
+			// 	}
+			// });
 
 			$('.inner-section').each(function() {
 				var contentEl = this,

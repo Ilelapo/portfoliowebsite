@@ -1690,9 +1690,9 @@ h1 + ol, h2 + ol, h3 + ol, h4 + ol, h5 + ol, h6 + ol {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden;
-  
+  overflow: hidden;  
 }
+
 
 .section-header .fullscreen-header-image {
   position: absolute;
